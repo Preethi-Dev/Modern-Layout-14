@@ -1,0 +1,239 @@
+/* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Moniqa";
+  src: url(./assets/fonts/Moniqa-Display.ttf);
+}
+
+@font-face {
+  font-family: "Neutral Face";
+  src: url(./assets/fonts/NeutralFace.otf);
+}
+
+@font-face {
+  font-family: "Neutral Face Bold";
+  src: url(./assets/fonts/NeutralFace-Bold.otf);
+}
+
+/* Variables */
+:root {
+  --secondary: #ffffff;
+  --primary: #000000;
+  --gap: 3rem;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+header nav {
+  font-family: "Neutral Face";
+  font-style: normal;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav .logo {
+  font-weight: 700;
+}
+
+header nav .cart {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header nav .cart .items_count {
+  color: var(--secondary);
+  background-color: var(--primary);
+  padding: 10px;
+}
+
+main {
+  overflow: hidden;
+}
+
+main .text h2 {
+  font-family: "Neutral Face";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+}
+
+span {
+  display: block;
+}
+
+main .text .sub_text p:nth-child(1) {
+  font-family: "Moniqa";
+  font-style: italic;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+}
+
+main .text .sub_text p:nth-child(2),
+main .scrolling_text {
+  font-family: "Neutral Face";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+main .scrolling_text {
+  width: max-content;
+}
+
+/* Mobile Styles */
+header {
+  padding: 1.875rem;
+}
+
+header nav ul {
+  display: none;
+}
+
+main .text h2 {
+  font-size: 3rem;
+}
+
+main .text .sub_text p:nth-child(1) {
+  font-size: 2rem;
+}
+
+main .text .sub_text p:nth-child(2) {
+  font-size: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: [col-start] repeat(4, 1fr) [col-end];
+  row-gap: 1rem;
+}
+
+.grid > * {
+  grid-column: col-start / col-end;
+}
+
+main .image:nth-child(1) {
+  grid-row: 1;
+  justify-self: start;
+}
+
+main .image:nth-child(2) {
+  grid-row: 2;
+  justify-self: center;
+}
+
+main .image:nth-child(3) {
+  grid-row: 3;
+  justify-self: end;
+}
+
+main .image:nth-child(2) .text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin-bottom: 1rem;
+}
+
+main .image:nth-child(2) .text .sub_text {
+  display: flex;
+  justify-content: end;
+  gap: var(--gap);
+}
+
+main .scrolling_text {
+  grid-row: 3;
+  align-self: end;
+  padding-bottom: 40px;
+}
+
+/* Small Tablet Styles */
+@media screen and (min-width: 690px) {
+  .grid {
+    grid-template-columns: [col-start] repeat(6, 1fr) [col-end];
+  }
+
+  main .text h2 {
+    font-size: 4rem;
+  }
+
+  main .text .sub_text p:nth-child(1) {
+    font-size: 3rem;
+  }
+
+  main .text .sub_text p:nth-child(2) {
+    font-size: 1.125rem;
+  }
+}
+
+/* Large Tablet and Laptop Styles */
+@media screen and (min-width: 960px) {
+  header {
+    padding: 2.875rem;
+  }
+
+  header nav ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: [col-start] repeat(12, 1fr) [col-end];
+  }
+
+  main .text h2 {
+    font-size: 4.5rem;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1200px) {
+  .grid {
+    row-gap: 0;
+  }
+
+  main .image:nth-child(1) {
+    margin-bottom: -5rem;
+  }
+
+  main .image:nth-child(3) {
+    margin-top: -5rem;
+  }
+
+  main .image:nth-child(2) {
+    position: relative;
+  }
+
+  main .image:nth-child(2) .text {
+    position: absolute;
+    top: -2.5rem;
+    right: -13.5rem;
+  }
+}
