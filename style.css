@@ -74,7 +74,7 @@ header nav .cart .items_count {
 }
 
 main {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 main .text h2 {
@@ -217,6 +217,12 @@ main .scrolling_text {
 @media screen and (min-width: 1200px) {
   .grid {
     row-gap: 0;
+  }
+
+  main {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
   }
 
   main .image:nth-child(1) {
