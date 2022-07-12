@@ -40,6 +40,10 @@ body {
   color: var(--primary);
 }
 
+.container {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
 }
@@ -73,10 +77,6 @@ header nav .cart .items_count {
   padding: 10px;
 }
 
-main {
-  /* overflow: hidden; */
-}
-
 main .text h2 {
   font-family: "Neutral Face";
   font-style: normal;
@@ -105,7 +105,7 @@ main .scrolling_text {
   line-height: 100%;
 }
 
-main .scrolling_text {
+footer {
   width: max-content;
 }
 
@@ -168,9 +168,8 @@ main .image:nth-child(2) .text .sub_text {
   gap: var(--gap);
 }
 
-main .scrolling_text {
-  grid-row: 3;
-  align-self: end;
+footer {
+  margin-top: -2rem;
   padding-bottom: 40px;
 }
 
